@@ -1,21 +1,30 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-int fibo_recur(int n)
+ 
+int fibonacci(int n)
 {
-    if (n == 1 )
-        return 0;
-   else if(n==2)
-       return 1;
+    if((n==1)||(n==0))
+    {
+        return(n);
+    }
     else
-        return fibo_recur(n - 1) + fibo_recur(n - 2);;
+    {
+        return(fibonacci(n-1)+fibonacci(n-2));
+    }
 }
-
+ 
 int main()
 {
-    int n;
-    cout<<"PROGRAM TO FIND NTH FIBONACCI NUMBER USING RECURSION";
-        cout<<"\n Enter the integer n to find nth fibonnaci no.";
-        cin>>n;
-        cout<<"\n The nth Fibonacci number is: "<<fibo_recur(n)<<endl;
-        return 0;
+    int n,i=0;
+    cout<<"Input the number of terms for Fibonacci Series:";
+    cin>>n;
+    cout<<"\nFibonacci Series is as follows\n";
+ 
+    while(i<n)
+    {
+        cout<<" "<<fibonacci(i);
+        i++;
+    }
+ 
+    return 0;
 }
